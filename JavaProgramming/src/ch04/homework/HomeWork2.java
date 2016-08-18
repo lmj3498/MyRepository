@@ -3,7 +3,17 @@ package ch04.homework;
 public class HomeWork2 {
 
 	public static void main(String[] args) {
+		int num1,num2;
+		int sum = 0;
 		
+		for(int i=1;i<=100;i++){
+			num1 = (int)(Math.random()*10)+1;
+			num2 = (int)(Math.random()*10)+1;
+			sum=(4*num1)+(5*num2);
+			if(sum == 60){
+				System.out.println("("+num1+","+num2+")");
+			}
+		}
 
 	}
 

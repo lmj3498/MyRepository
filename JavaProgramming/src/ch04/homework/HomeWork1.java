@@ -3,6 +3,17 @@ package ch04.homework;
 public class HomeWork1 {
 
 	public static void main(String[] args) {
+		int dice1 = 0;
+		int dice2 = 0;
+		int sum = 0;
+		for(int i=0;i<100;i++){
+			dice1 = (int)(Math.random()*6)+1;
+			dice2 = (int)(Math.random()*6)+1;
+			sum=dice1+dice2;
+			if(sum == 10){
+				System.out.println("("+dice1+","+dice2+")");
+			}
+		}
 		
 
 	}
