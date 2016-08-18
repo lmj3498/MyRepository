@@ -21,6 +21,7 @@ public class VariableScope {
 			//System.out.println("var3: " + var3);
 			//System.out.println("var3: " + var3);
 			//System.out.println("var3: " + var3);
+			//System.out.println("var3: " + var3);
 			
 		}
 		
