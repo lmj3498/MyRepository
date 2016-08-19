@@ -16,9 +16,10 @@ public class WhileExample6 {
 			System.out.println("----------------");
 			System.out.print("선택 :");
 			
+			}
 			
 			choice = System.in.read();
-			}
+			
 			
 				if(choice == 49){
 					money += 1000;
