@@ -8,7 +8,6 @@ public class BoardTest {
 		Scanner scanner = new Scanner(System.in);
 		String[][] boards = new String[100][];//번호0, 제목1, 글쓴이2, (내용)3, 조회수4 
 		
-		
 		while(true){
 			System.out.println("----------------------------------------------------------");
 			System.out.println("1.목록|2.글쓰기|3.상세보기|4.수정하기|5.삭제하기|6.종료");
