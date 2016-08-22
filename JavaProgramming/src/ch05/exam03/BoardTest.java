@@ -6,13 +6,8 @@ public class BoardTest {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String[][] boards = new String[100][5];//번호0, 제목1, 글쓴이2, (내용)3, 조회수4 
+		String[][] boards = new String[100][];//번호0, 제목1, 글쓴이2, (내용)3, 조회수4 
 		
-		//System.out.println(boards[0][0]);
-		/*for(int i = 0;i<boards.length;i++){
-			boards[i][0] = String.valueOf(i);
-		}*/
-			
 		
 		while(true){
 			System.out.println("----------------------------------------------------------");
@@ -26,64 +21,47 @@ public class BoardTest {
 				System.out.println("번호\t\t제목\t\t글쓴이\t\t조회수");
 				System.out.println("*******************************************************");
 				for(String[] board : boards){
-					if(board[0]!=null){
+					if(board != null){
 						System.out.println(board[0]+"\t\t"+board[1]+"\t\t"+board[2]+"\t\t"+board[4]);
-					}else
-						break;
+					}
 				}
 			}else if(choice.equals("2")){
 				for(int i = 0;i<boards.length;i++){
-					if(boards[i] != null){
-						boards[i][0] = String.valueOf(i);
-						String title = null;
-						String author = null;
-						String content = null;
+					if(boards[i] == null){
+						
 						System.out.print("제목 : ");
-						title = scanner.nextLine();
+						String title = scanner.nextLine();
 						System.out.print("글쓴이 : ");
-						author = scanner.nextLine();
+						String author = scanner.nextLine();
 						System.out.print("내용 : ");
-						content = scanner.nextLine();
-						boards[i][1] = title;
-						boards[i][2] = author;
-						boards[i][3] = content;
-						boards[i][4] = String.valueOf(0);
+						String content = scanner.nextLine();
+						String[] temp = {String.valueOf(i),title,author,content,String.valueOf(0)};
+						boards[i] = temp;
 						break;
 					}
 				}
-				//여기부터 일단 수정!
+				
 			}else if(choice.equals("3")){
 				System.out.print("자세히 보고 싶은 책의 번호 : ");
-				String bnum = String.valueOf(scanner.nextInt());
-				for(String[] board : boards){
-					if(board[0]==bnum){
-						System.out.println("책 제목 : "+board[1]);
-						System.out.println("책 내용 : "+board[3]);
-						int hitNum = Integer.parseInt(board[4]);
-						hitNum++;
-						board[4] = String.valueOf(hitNum);
-					}
-				}
+				int bnum = Integer.parseInt(scanner.nextLine());
+				System.out.println("책 제목 : "+boards[bnum][1]);
+				System.out.println("책 내용 : "+boards[bnum][3]);
+				int hitNum = Integer.parseInt(boards[bnum][4]);
+				hitNum++;
+				boards[bnum][4] = String.valueOf(hitNum);
+				//여기부터 일단 수정!
 			}else if(choice.equals("4")){
 				System.out.print("수정하고 싶은 책의 번호 : ");
-				String bnum = String.valueOf(scanner.nextInt());
-				for(String[] board : boards){
-					if(board[0]==bnum){
-						String content = null;
-						System.out.print("내용 : ");
-						content = scanner.nextLine();
-						board[3] = content;
-					}
-				}
+				int bnum = Integer.parseInt(scanner.nextLine());
+				String content = null;
+				System.out.print("바꿀내용 : ");
+				content = scanner.nextLine();
+				boards[bnum][3] = content;
 			}else if(choice.equals("5")){
 				System.out.print("삭제하고 싶은 책의 번호 : ");
-				int bnum = scanner.nextInt();
-				for(String[] board : boards){
-					if(board[0]==String.valueOf(bnum)){
-						boards[bnum] = null;
-						
-					}
-				}
+				int bnum = Integer.parseInt(scanner.nextLine());
+				boards[bnum] = null;
+				
 			}else if(choice.equals("6")){
 				break;
 			}
