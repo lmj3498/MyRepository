@@ -24,7 +24,7 @@ public class Car {
 	void run(){
 		while(true){
 			if(gas>0){
-				System.out.println("멈춥니다.(gas잔량 : "+ gas+")");
+				System.out.println("갑니다.(gas잔량 : "+ gas+")");
 				gas -= 1;
 			}else{
 				//break;
