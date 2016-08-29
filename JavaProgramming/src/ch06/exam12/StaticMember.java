@@ -5,6 +5,7 @@ public class StaticMember {
 		static String field;
 		//스태틱 블록
 		static{
+			System.out.println("StaticMember()실행");
 			field = "자바";
 		}
 		//스태틱 메소드
