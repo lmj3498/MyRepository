@@ -2,14 +2,14 @@ package ch07.exam09;
 
 public class Car {
 	
-	/*Tire[] tires = {
+	Tire[] tires = {
 			new Tire("앞 왼쪽",6),
 			new Tire("앞 오른쪽",2),
 			new Tire("뒤 왼쪽",3),
 			new Tire("뒤 오른쪽",4) 
-			};*/
-
-	Tire[] tires = null; 
+			};
+	
+	//Tire[] tires = null; 
 	
 	public Car(){
 		tires = new Tire[]{
