@@ -34,7 +34,7 @@ class Member2 implements Comparable{
 	
 	@Override
 	public int compareTo(Object o) {
-		System.out.println("compareTo");
+		//System.out.println("compareTo");
 		Member2 target = (Member2) o;
 		
 		return score - target.score;
