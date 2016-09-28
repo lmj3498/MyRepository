@@ -18,7 +18,7 @@ public class HomeController {
 		logger.info("home() 실행");
 		
 		
-		return "index";
+		return "home";
 	}
 	
 }
