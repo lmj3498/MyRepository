@@ -14,15 +14,10 @@ public class HomeController {
 	
 	@RequestMapping("/")
 	public String index() {
-		System.out.println("home() 실행1");
+		
 		logger.info("home() 실행");
 		return "home";
 	}
 	
-	@RequestMapping("/news")
-	public String news(){
-		logger.info("news() 실행");
-		return "news";
-	}
 	
 }
