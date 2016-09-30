@@ -7,9 +7,9 @@
 	</head>
 	
 	<body>
-		home 페이지 입니다.
+		[Exam01. 게시판 폼 요청]
 		<hr/>
-		1. <a href="/mytest/exam01/index">Exam01</a> 글쓰러가기<br/>
+		<a href="/mytest/exam01/board">글쓰러 가기</a> <br/>
 	</body>
 	
 </html>
