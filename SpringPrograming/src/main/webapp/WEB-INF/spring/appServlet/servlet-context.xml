@@ -23,6 +23,45 @@
 	
 	<context:component-scan base-package="com.mycompany.myapp" />
 	
+	<!-- A를 관리 객체로 생성 -->
+	<beans:bean name="aObj" class="com.mycompany.myapp.exam09.A"/>
+	
+	<!-- B를 관리 객체로 생성  -->
+	<beans:bean name="bObj" class="com.mycompany.myapp.exam09.B"/>
+	
+	<!-- ServiceA를 관리 객체로 생성  -->
+	<beans:bean name="serviceAObj" class="com.mycompany.myapp.exam09.ServiceA"/>
+	
+	<!-- ServiceB를 관리 객체로 생성  -->
+	<beans:bean name="serviceBObj" class="com.mycompany.myapp.exam09.ServiceB"/>
+	
+	<!-- ServiceCImpl1를 관리 객체로 생성  -->
+	<beans:bean name="serviceCImpl" class="com.mycompany.myapp.exam09.ServiceCImpl1"/>
+	
+	<!-- ServiceCImpl1를 관리 객체로 생성  -->
+	<!-- <beans:bean name="serviceCImpl" class="com.mycompany.myapp.exam09.ServiceCImpl2"/> -->
+	
+	<!-- ServiceDImpl1를 관리 객체로 생성  -->
+	<beans:bean name="serviceDImpl" class="com.mycompany.myapp.exam09.ServiceDImpl1"/>
+	
+	<!-- ServiceDImpl2를 관리 객체로 생성  -->
+	<!-- <beans:bean name="serviceDImpl" class="com.mycompany.myapp.exam09.ServiceDImpl2"/> -->
+	
+	
+	<!-- Exam09Controller 객체를 찾아서 가져오기 -->
+	<beans:bean name="exam09Controller" class="com.mycompany.myapp.exam09.Exam09Controller">
+		<!-- Setter 주입 
+			<beans:property name="setter 이름" ref="매개값으로 전달할 객체(관리객체 이름)"/>
+		-->
+		<beans:property name="a" ref="aObj"></beans:property>
+		<beans:property name="b" ref="bObj"></beans:property>
+		<beans:property name="serviceA" ref="serviceAObj"></beans:property>
+		<beans:property name="serviceB" ref="serviceBObj"></beans:property>
+		<beans:property name="serviceC" ref="serviceCImpl"></beans:property>
+		<beans:property name="serviceD" ref="serviceDImpl"></beans:property>
+		
+	</beans:bean>
+	
 	
 	
 </beans:beans>
