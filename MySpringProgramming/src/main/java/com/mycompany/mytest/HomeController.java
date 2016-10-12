@@ -11,15 +11,9 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@RequestMapping("/")
-	public String home() {
-		logger.info("home 페이지 입니다");
+	public String index() {
 		
+		logger.info("home() 실행");
 		return "home";
-	}
-	
-	@RequestMapping("/news")
-	public String news(){
-		logger.info("news() 실행");
-		return "news";
 	}
 }

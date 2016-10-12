@@ -4,7 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class A {
-private static final Logger logger = LoggerFactory.getLogger(A.class);
+	
+	private static final Logger logger = LoggerFactory.getLogger(A.class);
 	
 	public A(){
 		logger.info("A 객체 생성");

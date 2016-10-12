@@ -7,9 +7,13 @@
 	</head>
 	
 	<body>
-		[Exam01. 게시판 폼 요청]
+		Exam01
 		<hr/>
-		<a href="/mytest/exam01/board">글쓰러 가기</a> <br/>
+		<a href="/myapp/exam01/join">가입</a> <br/>
+		<a href="/myapp/exam01/login">로그인</a> <br/>
+		<a href="/myapp/exam01/logout">로그아웃</a> <br/>
+		<a href="/myapp/exam01/withdraw">탈퇴</a> <br/>
+		
 	</body>
 	
 </html>
