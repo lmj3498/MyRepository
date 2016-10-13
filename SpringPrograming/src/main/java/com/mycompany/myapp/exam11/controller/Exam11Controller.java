@@ -104,4 +104,12 @@ public class Exam11Controller {
 		model.addAttribute("boardlist",list);
 		return "exam11/boardList";
 	}
+	
+	@RequestMapping(value="/boardView", method=RequestMethod.GET)
+	public String boardView(int bno,Model model){
+		logger.info("boardView 처리");
+		Board board = boardService.getBoard(bno);
+		model.addAttribute("board", board);
+		return "exam11/boardView";
+	}
 }
