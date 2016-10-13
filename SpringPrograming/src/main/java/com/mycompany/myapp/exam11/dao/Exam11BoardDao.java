@@ -40,9 +40,20 @@ public class Exam11BoardDao {
 	public Board selectBoard(int bno){
 		logger.info("selectBoard 처리");
 		Board board = new Board();
-		board.setBtitle("이명진");
+		board.setBwriter("이명진");
 		board.setBtitle("완전 존잘");
 		board.setBcontent("너어어어어무 잘생김");
 		return board;
 	}
+
+	public void update(Board board) {
+		logger.info("update 처리");
+		
+	}
+
+	public void delete(int bno) {
+		logger.info("delete 처리");
+		
+	}
+	
 }
