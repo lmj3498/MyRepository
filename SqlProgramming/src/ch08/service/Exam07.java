@@ -23,7 +23,6 @@ public class Exam07 {
 			PreparedStatement pstmt1 = conn.prepareStatement(sql1);
 			int rowNo1 = pstmt1.executeUpdate();
 			pstmt1.close();
-			
 			//입금작업
 			String sql2 = "update account set abalance=abalance+10000 where ano = '111-113'";
 			PreparedStatement pstmt2 = conn.prepareStatement(sql2);
