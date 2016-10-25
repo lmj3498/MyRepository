@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.mycompany.myapp.exam12.dao.MemberDao;
+import com.mycompany.myapp.exam12.dao.Exam12Dao;
 import com.mycompany.myapp.exam12.dto.Member;
 
 
@@ -22,7 +22,7 @@ public class Exam12Service {
 	private DataSource dataSource;
 	
 	@Autowired
-	private MemberDao dao;
+	private Exam12Dao dao;
 	
 	public void join(Member member) {
 		Connection conn = null;
@@ -31,9 +31,7 @@ public class Exam12Service {
 			conn = dataSource.getConnection();//커넥션 풀로부터 커넥션 대여
 			dao.setConn(conn);// 커넥션 세터 주입
 			int rowNo = dao.insert(member);
-			
 			logger.info(rowNo + " 행이 저장됨");
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
