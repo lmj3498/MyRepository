@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="photoboard" directorySegmentName="seg_0" id="744F18D9-24ED-A317-7F58-1F71FF855549">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:56 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+</TableProxyOraclev11g>
