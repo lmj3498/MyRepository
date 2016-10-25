@@ -13,12 +13,12 @@ import finalsource.dto.Member;
 public class TestBoardDao {
 
 	public static void main(String[] args) {
-		testInsert();
+		//testInsert();
 		//testSelectByMid();
 		//testSelectByMname();
 		//testUpdate();
 		//testDeleteByMid();
-
+		testselectByPage(2,10);
 	}
 
 	public static void testInsert() {
@@ -156,6 +156,37 @@ public class TestBoardDao {
 
 			int rowNo = dao.deleteByBno(1);
 			System.out.println(rowNo + " 행이 삭제됨");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.setAutoCommit(true);
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static void testselectByPage(int pageNo, int rowsPerPage){
+		Connection conn = null;
+
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "tester1", "kosa12345");
+			BoardDao dao = new BoardDao();
+			dao.setConn(conn);// 커넥션 세터 주입
+
+			List<Board> list = dao.selectByPage(pageNo,rowsPerPage);
+			for (Board board : list) {
+				System.out.print(board.getBno() + " :");
+				System.out.print(board.getBtitle() + " :");
+				System.out.print(board.getBcontent() + " :");
+				//System.out.println(board.getBwriter() + " :");
+				System.out.print(board.getBhitcount() + " :");
+				System.out.println(board.getBdate() + " :");
+				System.out.println("--------------------------");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

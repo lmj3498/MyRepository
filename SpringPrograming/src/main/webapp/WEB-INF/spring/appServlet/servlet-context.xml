@@ -3,7 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
@@ -86,6 +88,20 @@
 		
 	</beans:bean>
 	
+	<!-- Connection Pool -->
+	<!-- 이 부분은 App 내부에 커넥션 풀 만드는 부분이고 톰캣의  외부의 xml 설정 방법으로 WAS 내부에 커넥션 풀 만드는 방법으로 대체 -->
+	<beans:bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<beans:property name="driverClass" value="oracle.jdbc.OracleDriver"/>
+		<beans:property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+		<beans:property name="user" value="tester1"/>
+		<beans:property name="password" value="kosa12345"/>
+		<beans:property name="maxPoolSize" value="3"/>
+		<beans:property name="initialPoolSize" value="1"/>
+		<beans:property name="acquireIncrement" value="1"/>
+		<beans:property name="minPoolSize" value="1"/>
+		
+	</beans:bean>
 	
-	
+	<!-- 의존성 Connection Pool WAS 방법 -->
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="jdbc/orcl"/> -->
 </beans:beans>
