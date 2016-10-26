@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4509964F-B36E-0EEE-AECB-62B55FD96785" name="member">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:33:53 UTC</createdTime>
+<ownerDesignName>Relational_1</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="mid" id="6EA4B996-4EA8-FA7C-BCDC-C9D2D2FEAECF">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:34:32 UTC</createdTime>
+<ownerDesignName>Relational_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mname" id="74058CF2-DD05-8B8B-E695-A13959E02A14">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:34:32 UTC</createdTime>
+<ownerDesignName>Relational_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mpassword" id="3C496D4F-745E-5C9C-1B43-4DBC0F416576">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:34:32 UTC</createdTime>
+<ownerDesignName>Relational_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="maddress" id="7C84AF78-AADA-DA59-F287-11F8A7EB2B19">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:34:32 UTC</createdTime>
+<ownerDesignName>Relational_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mtel" id="3DC850CE-A18B-2484-FCDD-9651F2D1A6B1">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:35:19 UTC</createdTime>
+<ownerDesignName>Relational_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="memail" id="240A9B0B-FFF0-90A2-3891-9B79F891772B">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:35:19 UTC</createdTime>
+<ownerDesignName>Relational_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BDC51F0E-E935-ED44-2F5C-394FEF9EBFE6" name="member_PK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:51:01 UTC</createdTime>
+<ownerDesignName>Relational_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6EA4B996-4EA8-FA7C-BCDC-C9D2D2FEAECF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
