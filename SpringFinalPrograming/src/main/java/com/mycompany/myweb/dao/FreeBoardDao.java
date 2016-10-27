@@ -18,7 +18,7 @@ public class FreeBoardDao {
 	JdbcTemplate jdbcTemplate;
 	
 	public int insert(FreeBoard freeboard){
-		String sql = "insert into freeboard(bno,btitle,bcontent,bwriter,bhitcount,bdate) values(seq_freeboard_bno.nextval,?,?,?,0,sysdate);";
+		String sql = "insert into freeboard(bno,btitle,bcontent,bwriter,bhitcount,bdate) values(seq_freeboard_bno.nextval,?,?,?,0,sysdate)";
 		
 		int row = jdbcTemplate.update(
 				sql, 
@@ -50,7 +50,7 @@ public class FreeBoardDao {
 	}
 	
 	public FreeBoard selectByBno(int bno){
-		String sql = "select bno,btitle,bcontent,bwriter,bhitcount,bdate from freeboard where = ?";
+		String sql = "select bno,btitle,bcontent,bwriter,bhitcount,bdate from freeboard where bno = ?";
 		List<FreeBoard> list = jdbcTemplate.query(sql, new Object[]{bno}, new RowMapper<FreeBoard>(){
 			@Override
 			public FreeBoard mapRow(ResultSet rs, int row) throws SQLException {
@@ -70,10 +70,10 @@ public class FreeBoardDao {
 	
 	public List<FreeBoard> selectByPage(int pageNo, int rowsPerPage){
 		String sql ="";
-		sql += "select rn, bno, btitle, bhitcount, bdate ";
+		sql += "select rn, bno, btitle, bwriter, bhitcount, bdate ";
 		sql += "from( ";
-		sql += "select rownum as rn, bno, btitle, bhitcount, bdate ";
-		sql += "from(select bno, btitle, bhitcount, bdate from freeboard order by bno desc) ";
+		sql += "select rownum as rn, bno, btitle, bwriter, bhitcount, bdate ";
+		sql += "from(select bno, btitle, bwriter, bhitcount, bdate from freeboard order by bno desc) ";
 		sql += "where rownum<=? ";
 		sql += ") ";
 		sql += "where rn>=? ";

@@ -61,7 +61,7 @@ public class MemberDao {
 				member.setMpassword(rs.getString("mpassword"));
 				member.setMaddress(rs.getString("maddress"));
 				member.setMtel(rs.getString("mtel"));
-				member.setMemail(rs.getString("mtemail"));
+				member.setMemail(rs.getString("memail"));
 				return member;
 			}
 		});

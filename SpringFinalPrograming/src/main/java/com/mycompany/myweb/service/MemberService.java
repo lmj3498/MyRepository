@@ -1,7 +1,5 @@
 package com.mycompany.myweb.service;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -35,17 +33,16 @@ public class MemberService {
 		return JOIN_SUCCESS;
 	}
 	
-	public int login(String mid, String mpassword,HttpSession session){
+	public int login(String mid, String mpassword){
 		Member member = memberDao.selectByMid(mid);
 		if(member == null) {return LOGIN_FAIL_MID;}
 		if(member.getMpassword().equals(mpassword) == false){return LOGIN_FAIL_PASSWORD;}
-		session.setAttribute("login", mid);
 		return LOGIN_SUCCESS;
 	}
 	//정상 OR 예외 -> void
 	//세션에 로그인 정보 저장되어 있으므로 그냥 지우면 됨
-	public int logout(HttpSession session){
-		session.removeAttribute("login");
+	
+	public int logout(String mid){
 		return LOGOUT_SUCCESS;
 	}
 	
@@ -60,31 +57,31 @@ public class MemberService {
 		return memberDao.selectByMemail(memail);
 	}
 	
-	public Member info(String mpassword,HttpSession session){
-		String mid = (String) session.getAttribute("login");
+	public Member info(String mid, String mpassword){
 		Member member = memberDao.selectByMid(mid);
 		if(member.getMpassword().equals(mpassword) == false){return null;}
 		return member;
 	}
 	
 	public int modify(Member member){
-		memberDao.update(member);
+		Member dbMember = memberDao.selectByMid(member.getMid());
+		if(dbMember.getMpassword().equals(member.getMpassword()) == false) {return MODIFY_FAIL;}
+		int row = memberDao.update(member);
+		if(row != 1) {return MODIFY_FAIL;}
 		return MODIFY_SUCCESS;
 	}
 	
-	public int withdraw(String mpassword,HttpSession session){
-		String mid = (String)session.getAttribute("login");
+	public int withdraw(String mid, String mpassword){
 		Member member = memberDao.selectByMid(mid);
 		if(member.getMpassword().equals(mpassword) == false){return WITHDRAW_FAIL;}
 		memberDao.delete(mid);
-		//session.removeAttribute("login");
-		logout(session);
+		logout(mid);
 		return WITHDRAW_SUCCESS;
 	}
 	
 	public boolean isMid(String mid){
 		Member member = memberDao.selectByMid(mid);
-		if(member.getMid().equals(mid) == false){return false;}
+		if(member == null){return false;}
 		return true;
 	}
 }
