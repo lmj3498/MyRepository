@@ -43,7 +43,7 @@ public class FreeBoardDao {
 	}
 	
 	public int delete(int bno){
-		String sql = "delete from freeboard where=?";
+		String sql = "delete from freeboard where bno=?";
 		int row = jdbcTemplate.update(sql, bno);
 		return row;
 		

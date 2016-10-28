@@ -22,22 +22,33 @@ public class FreeBoardController {
 	private FreeBoardService freeBoardService;
 	
 	@RequestMapping("/list")
-	public String list(@RequestParam(defaultValue="1") int pageNo,Model model){
+	public String list(String pageNo,Model model,HttpSession session){
+		int intPageNo = 1;
+		if(pageNo == null){
+			pageNo = (String)session.getAttribute("pageNo");
+			if(pageNo != null){
+				intPageNo = Integer.parseInt(pageNo);
+			}
+		}else{
+			intPageNo = Integer.parseInt(pageNo);
+		}
+		session.setAttribute("pageNo", String.valueOf(intPageNo));
+		
 		int rowsPerPage = 10;
-		int pagesPerGroup = 10;
+		int pagesPerGroup = 5;
 		int totalBoardNo = freeBoardService.getCount();
 		int totalPageNo = totalBoardNo/rowsPerPage+((totalBoardNo%rowsPerPage!=0)?1:0);
 		int totalGroupNo = totalPageNo/pagesPerGroup+((totalPageNo%pagesPerGroup!=0)?1:0);
-		int groupNo = (pageNo-1)/pagesPerGroup+1;
+		int groupNo = (intPageNo-1)/pagesPerGroup+1;
 		int startPageNo = (groupNo-1)*pagesPerGroup+1;
 		int endPageNo = startPageNo + pagesPerGroup-1;
 		if(groupNo == totalGroupNo){
 			endPageNo = totalPageNo;
 		}
 		
-		List<FreeBoard> list = freeBoardService.list(pageNo, rowsPerPage);
+		List<FreeBoard> list = freeBoardService.list(intPageNo, rowsPerPage);
 		
-		model.addAttribute("pageNo",pageNo);
+		model.addAttribute("pageNo",intPageNo);
 		model.addAttribute("rowsPerPage",rowsPerPage);
 		model.addAttribute("pagesPerGroup",pagesPerGroup);
 		model.addAttribute("totalBoardNo",totalBoardNo);
@@ -89,6 +100,12 @@ public class FreeBoardController {
 		FreeBoard dbFreeBoard = freeBoardService.info(freeBoard.getBno());
 		freeBoard.setBhitcount(dbFreeBoard.getBhitcount());
 		freeBoardService.modify(freeBoard);
+		return "redirect:/freeboard/list";
+	}
+	
+	@RequestMapping(value="/remove",method=RequestMethod.GET)
+	public String remove(int bno){
+		freeBoardService.remove(bno);
 		return "redirect:/freeboard/list";
 	}
 }

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -43,9 +43,11 @@
 		</tr>	
 		</table>
 		<div>
-			<a href="modify?bno=${freeBoard.bno}">[수정]</a>
-			<a href="remove?bno=${freeBoard.bno}">[삭제]</a>
-			<a href="list">[목록]</a>
+			<c:if test="${freeBoard.bwriter == login}">
+				<a href="modify?bno=${freeBoard.bno}">[수정]</a>
+				<a href="remove?bno=${freeBoard.bno}">[삭제]</a>
+			</c:if>
+			<a href="list?pageNo=${pageNo }">[목록]</a>
 		</div>
 	</body>
 	
