@@ -5,6 +5,11 @@
 <head>
 	<meta charset="UTF-8">
 	<style type="text/css">
+	
+		*{
+			font-family:돋움;
+			font-size: 12px;
+		}
 		a{
 			text-decoration: none;
 			color: black;
@@ -20,30 +25,38 @@
 	<hr />
 	
 	<c:if test="${login!=null }">
-	<a href="write">[글쓰기]</a>
+	<a href="write">[그림올리기]</a>
 	</c:if>
 	
 	
-	<table style="width: 600px;">
-		<tr>
-			<td>
-			<c:forEach begin="1" end="8">
-				<div style="width:120px; height:130px; margin:5px; display: inline-block;">
-					<div style="background-image: url(../resources/image/photo2.jpg); height: 100px;"></div>
-					<div>
-						<table style="width:100%; height: 30px; background-color: black;">
-							<tr>
-								<td style="text-align: left; color: white;">할슈타트</td>
-								<td style="text-align: right; color: aqua;">10</td>
-								
-							</tr>
-						</table>
+	<table style="width:600px">
+			<tr>
+				<td>
+				
+					<c:forEach var="photoBoard" items="${list}">
+					<a href="info?bno=${photoBoard.bno }">
+					<div style="width:120px; height:130px; margin:5px; display:inline-block; background-image:url(showPhoto?savedfile=${photoBoard.savedfile}); background-size: 120px 130px;">
+						<div style=" height:100px;">
+							<span style="color:white; font-size:12px">${photoBoard.bdate}</span>
+						</div>
+							
+						<div>
+							<table style="width:100%; height:30px; background-color: rgba( 0, 0, 0, 0.6 );">
+								<tr>
+									<td style="text-align:left; color:white">${photoBoard.btitle}</td>
+									<td style="text-align:right; color:aqua">${photoBoard.bhitcount}</td>
+								</tr>
+							</table>
+						</div>
 					</div>
-				</div>
-			</c:forEach>	
-			</td>
-		</tr>
-	</table>
+					</a>
+					</c:forEach>
+					
+				</td>
+				
+			</tr>
+			
+		</table>
 	
 	<!-- <a href="#" >1&nbsp;</a>
 	<a href="#" >2&nbsp;</a>

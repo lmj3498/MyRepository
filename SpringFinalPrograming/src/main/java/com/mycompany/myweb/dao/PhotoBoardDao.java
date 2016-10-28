@@ -19,7 +19,7 @@ public class PhotoBoardDao {
 	JdbcTemplate jdbcTemplate;
 	
 	public int insert(PhotoBoard photoboard){
-		String sql = "insert into photoboard(bno,btitle,bcontent,bwriter,bhitcount,bdate,originalfile,savedfile,mimetype) values(seq_photoboard_bno.nextval,?,?,?,0,sysdate,?,?,?);";
+		String sql = "insert into photoboard(bno,btitle,bcontent,bwriter,bhitcount,bdate,originalfile,savedfile,mimetype) values(seq_photoboard_bno.nextval,?,?,?,0,sysdate,?,?,?)";
 		
 		int row = jdbcTemplate.update(
 				sql, 
@@ -34,7 +34,7 @@ public class PhotoBoardDao {
 	}
 	
 	public int update(PhotoBoard photoboard){
-		String sql = "update photoboard set btitle=?,bcontent=?,bhitcount=?,originalfile=?,savedfile=?,mimetype=? where bno = ?";
+		String sql = "update photoboard set btitle=?,bcontent=?,bhitcount=?,originalfile=?,savedfile=?,mimetype=? where bno=?";
 		
 		int row = jdbcTemplate.update(
 				sql, 
@@ -50,14 +50,14 @@ public class PhotoBoardDao {
 	}
 	
 	public int delete(int bno){
-		String sql = "delete from photoboard where=?";
+		String sql = "delete from photoboard where bno=?";
 		int row = jdbcTemplate.update(sql, bno);
 		return row;
 		
 	}
 	
 	public PhotoBoard selectByBno(int bno){
-		String sql = "select bno,btitle,bcontent,bwriter,bhitcount,bdate,originalfile,savedfile,mimetype from photoboard where = ?";
+		String sql = "select bno,btitle,bcontent,bwriter,bhitcount,bdate,originalfile,savedfile,mimetype from photoboard where bno=?";
 		List<PhotoBoard> list = jdbcTemplate.query(
 				sql, 
 				new Object[]{bno}, 
@@ -84,10 +84,10 @@ public class PhotoBoardDao {
 	
 	public List<PhotoBoard> selectByPage(int pageNo, int rowsPerPage){
 		String sql ="";
-		sql += "select rn, bno, btitle, bhitcount, savedfile ";
+		sql += "select rn,bno,btitle,bhitcount,bdate,savedfile ";
 		sql += "from( ";
-		sql += "select rownum as rn, bno, btitle, bhitcount, savedfile ";
-		sql += "from(select bno, btitle, bhitcount, savedfile from photoboard order by bno desc) ";
+		sql += "select rownum as rn,bno,btitle,bhitcount,bdate,savedfile ";
+		sql += "from(select bno,btitle,bhitcount,bdate,savedfile from photoboard order by bno desc) ";
 		sql += "where rownum<=? ";
 		sql += ") ";
 		sql += "where rn>=? ";
@@ -102,6 +102,7 @@ public class PhotoBoardDao {
 						photoboard.setBno(rs.getInt("bno"));
 						photoboard.setBtitle(rs.getString("btitle"));
 						photoboard.setBhitcount(rs.getInt("bhitcount"));
+						photoboard.setBdate(rs.getDate("bdate"));
 						photoboard.setSavedfile(rs.getString("savedfile"));
 						return photoboard;
 					}
