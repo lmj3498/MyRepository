@@ -20,6 +20,9 @@
 		08. <a href="08_array.jsp">배열</a><br/>
 		09. <a href="09_object.jsp">객체</a><br/>
 		10. <a href="10_dom.jsp">DOM 사용</a><br/>
+		11. <a href="11_event.jsp">Event 처리 방법</a><br/>
+		12. <a href="12_event_example.jsp">다양한 Event 처리</a><br/>
+		13. <a href="13_validation.jsp">유효성 검사(입력값 검사)</a><br/>
 		
 		
 	</body>
