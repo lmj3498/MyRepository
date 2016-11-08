@@ -4,6 +4,15 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<%-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) --%>
+		<script src="${pageContext.servletContext.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
+		<%-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 --%>
+		<script src="${pageContext.servletContext.contextPath}/resources/bootstrap-3.3/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    	<%-- Bootstrap core CSS --%>
+    	<link href="${pageContext.servletContext.contextPath}/resources/bootstrap-3.3/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    	<%-- Custom styles for this template --%>
+    	<link href="${pageContext.servletContext.contextPath}/resources/css/justified-nav.css" rel="stylesheet"/>
+	
 	</head>
 	
 	<body>
