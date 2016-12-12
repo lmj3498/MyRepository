@@ -284,6 +284,7 @@ function newOrderSave(){
 	$("#orderForm1Modal").on('hidden.bs.modal',function(){
 		$("#orderModal").css("opacity","1");
 	});
+	
 }
 
 function resultOrder(){
@@ -296,6 +297,9 @@ function resultOrder(){
 				$("#orderForm1Modal").modal('hide');
 				showPageList(1);
 				
+				var items = $(".btn-nav");
+				$( items[activeEl] ).removeClass('active');
+			    $( items[0] ).addClass('active');
 			}else{
 				console.log("총 주문 실패");
 			}
@@ -348,7 +352,20 @@ function deleteOrder(ogid){
 	});
 }
 
+
 var activeEl = 0;
+var currentEl = 0;
+$(function() {
+
+    var items = $(".btn-nav");
+    $( ".btn-nav" ).click(function() {
+        $( items[activeEl] ).removeClass('active');
+        $( this ).addClass('active');
+        activeEl = $( ".btn-nav" ).index( this );
+    });
+});
+
+/*var activeEl = 0;
 $(function() {
     var items = $(".btn-nav");
     $( items[activeEl] ).addClass('active');
@@ -357,7 +374,7 @@ $(function() {
         $( this ).addClass('active');
         activeEl = $( ".btn-nav" ).index( this );
     });
-});
+});*/
 
 
 
