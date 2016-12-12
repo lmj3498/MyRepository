@@ -60,8 +60,7 @@
 	</c:if>
 	<c:forEach var="i" begin="${startPageNo}" end="${endPageNo }">
 	 <a href="list?pageNo=${i}" 
-	 	<c:if test="${pageNo==i }">style="color:red"</c:if>
-	 >${i}</a>
+	 	<c:if test="${pageNo==i }">style="color:red"</c:if>>${i}</a>
 	</c:forEach>
 	 
 	<c:if test="${groupNo<totalGroupNo }">
