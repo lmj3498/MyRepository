@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.myapplication.MainActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/light1_large"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:text="Light Interior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:textSize="24sp"
+            android:textStyle="normal|italic" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ToggleButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_list_img"
+                    android:textOff=""
+                    android:textOn=""
+                    android:layout_marginRight="5dp" />
+
+                <TextView
+                    android:text="위치"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <ToggleButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_review_img"
+                    android:textOff=""
+                    android:textOn=""
+                    android:layout_marginRight="5dp" />
+
+                <TextView
+                    android:text="리뷰"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ToggleButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_location_img"
+                    android:textOff=""
+                    android:textOn=""
+                    android:layout_marginRight="5dp" />
+
+                <TextView
+                    android:text="위치"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/light1"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="인테리어 조명1"
+                        android:textSize="18sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:text="주방을 밝히는데 사용하면 좋습니다. 어두운 주방을 밝혀보세요~"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/light2"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="인테리어 조명1"
+                        android:textSize="18sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:text="주방을 밝히는데 사용하면 좋습니다. 어두운 주방을 밝혀보세요~"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/light3"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="인테리어 조명1"
+                        android:textSize="18sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:text="주방을 밝히는데 사용하면 좋습니다. 어두운 주방을 밝혀보세요~"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/light4"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="인테리어 조명1"
+                        android:textSize="18sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:text="주방을 밝히는데 사용하면 좋습니다. 어두운 주방을 밝혀보세요~"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/light5"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="인테리어 조명1"
+                        android:textSize="18sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:text="주방을 밝히는데 사용하면 좋습니다. 어두운 주방을 밝혀보세요~"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/light1"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="인테리어 조명1"
+                        android:textStyle="normal|bold"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:text="주방을 밝히는데 사용하면 좋습니다."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/light2"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="인테리어 조명1"
+                        android:textSize="18sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:text="주방을 밝히는데 사용하면 좋습니다. 어두운 주방을 밝혀보세요~"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/light3"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="인테리어 조명1"
+                        android:textSize="18sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:text="주방을 밝히는데 사용하면 좋습니다. 어두운 주방을 밝혀보세요~"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/light4"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="인테리어 조명1"
+                        android:textSize="18sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:text="주방을 밝히는데 사용하면 좋습니다. 어두운 주방을 밝혀보세요~"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/light4"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="인테리어 조명1"
+                        android:textSize="18sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:text="주방을 밝히는데 사용하면 좋습니다. 어두운 주방을 밝혀보세요~"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
