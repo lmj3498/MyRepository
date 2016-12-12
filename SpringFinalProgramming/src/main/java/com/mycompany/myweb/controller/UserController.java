@@ -1,4 +1,4 @@
-package com.mycompany.myweb.controller;
+/*package com.mycompany.myweb.controller;
 
 import javax.servlet.http.HttpSession;
 
@@ -17,7 +17,7 @@ import com.mycompany.myweb.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 	//2016-11-14(월)
-	/*작성자: 이윤주*/ 
+	작성자: 이윤주 
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	@Autowired
@@ -125,3 +125,4 @@ public class UserController {
 
 	
 }
+*/
