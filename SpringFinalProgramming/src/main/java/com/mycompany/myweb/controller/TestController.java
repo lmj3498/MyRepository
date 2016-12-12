@@ -1,4 +1,4 @@
-package com.mycompany.myweb.controller;
+/*package com.mycompany.myweb.controller;
 
 
 import java.util.List;
@@ -71,3 +71,4 @@ public class TestController {
 		return "android/sphotoAndroid";
 	}
 }
+*/
