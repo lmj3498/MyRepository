@@ -31,8 +31,6 @@ public class OrderDao {
 		return row;
 	}
 
-	
-	
 	//1개 주문 검색
 	public Order selectByOgid(String ogid) {
 		String sql = "select ogid,ogtotalprice,ogtime,user_id,sid,oghowpay from order_total where ogid like ?";
@@ -88,7 +86,6 @@ public class OrderDao {
 		return list;
 	}
 
-	
 	//모든 주문 검색 페이지
 	public List<Order> selectByPage(int pageNo, int rowsPerPage) {
 		String sql ="";
@@ -136,7 +133,6 @@ public class OrderDao {
 		return count;
 	}
 	//------------------------------------------------------------------
-
 
 	//주문 기간 조회(완료)(주문할 때)(지워질 듯)
 	public Order selectByTime(Date start, Date end) {

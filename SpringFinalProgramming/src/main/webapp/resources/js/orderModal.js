@@ -8,12 +8,12 @@ function showPageList(pageNo) {
          for(var i=0; i<data.list.length; i++) {
             var order = data.list[i];
             $("#orderTbody").append(
-               '<tr>' +
-                   '<td data-label="주문번호" style="width:70px;"><a type="button" class="btn btn-primary" href="javascript:detailOrderList(\'' + order.ogid + '\')">' + order.ogid.substring(4, 7) + order.ogid.substring(11, 14) +'</a></td>' +
-                   '<td data-label="아이디" style="width:70px; font-size:18px; font-weight:bold;">' + order.user_id + '</td>' +
-                   '<td data-label="주문시간" style="width:70px; font-size:15px;">' + order.ogtime + '</td>' +
-                   '<td data-label="총 가격" style="width:70px; font-size:18px; font-weight:bold;">' + order.ogtotalprice + '</td>' +
-                   '<td data-label="결제 방식" style="width:70px; font-size:15px;">' + order.oghowpay + '</td>' +
+            		'<tr>' +
+            			'<td data-label="주문번호" style="width:70px;"><a type="button" class="btn btn-primary" href="javascript:detailOrderList(\'' + order.ogid + '\')">' + order.ogid.substring(4, 7) + order.ogid.substring(11, 14) +'</a></td>' +
+            			'<td data-label="아이디" style="width:70px; font-size:18px; font-weight:bold;">' + order.user_id + '</td>' +
+            			'<td data-label="주문시간" style="width:70px; font-size:15px;">' + order.ogtime + '</td>' +
+            			'<td data-label="총 가격" style="width:70px; font-size:18px; font-weight:bold;">' + order.ogtotalprice + '</td>' +
+            			'<td data-label="결제 방식" style="width:70px; font-size:15px;">' + order.oghowpay + '</td>' +
                    '</tr>'
                );
             
@@ -59,7 +59,6 @@ function showPageList(pageNo) {
 
 function detailOrderList(ogid){
 	var modifyogid = ogid;
-	console.log("여기 옴");
 	$("#orderModal").css("opacity","0.5");
 	$.ajax({
 	      url: "order/detailList",

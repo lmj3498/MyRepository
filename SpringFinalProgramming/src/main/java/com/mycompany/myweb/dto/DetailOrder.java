@@ -4,7 +4,7 @@ package com.mycompany.myweb.dto;
 public class DetailOrder {//1품목에 대한
 	private String mname;//메뉴명
 	private int sameItemCount;//수량
-	private String xname;//사이드 이름들
+	private String xname;//사이드
 	private int sameItemPrice;//가격
 	private String oghowpay;//결제방식
 	private String hot_ice;//핫_아이스

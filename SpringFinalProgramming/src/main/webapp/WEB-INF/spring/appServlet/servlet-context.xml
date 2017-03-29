@@ -33,8 +33,7 @@
 		<beans:property name="minPoolSize" value="1"/>
 	</beans:bean> 
 	
-	<beans:bean name="jdbcTemplate"
-		class="org.springframework.jdbc.core.JdbcTemplate">
+	<beans:bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<beans:property name="dataSource" ref="dataSource" />
 	</beans:bean>
 	

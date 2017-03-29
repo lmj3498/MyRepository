@@ -132,7 +132,6 @@
 			    <version>0.9.1.2</version>
 			</dependency>
 			
-			
 			<dependency>
 			    <groupId>com.oracle</groupId>
 			    <artifactId>ojdbc6</artifactId>
